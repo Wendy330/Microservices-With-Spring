@@ -1,13 +1,19 @@
 package com.example.lab1.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import java.util.Arrays;
+import java.util.List;
 
-@Controller
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.lab1.entity.Team;
+
+@RestController
 public class TeamController {
 	
-	@GetMapping("/")
-	public String hello() {
-		return "hello";
+	@GetMapping("/teams")
+	public List<Team> getTeams() {
+	  	return Arrays.asList(new Team(0l, "Harlem", "Globetrotters"), new Team(1l, "Washington", "Generals"));
 	}
+	
 }
