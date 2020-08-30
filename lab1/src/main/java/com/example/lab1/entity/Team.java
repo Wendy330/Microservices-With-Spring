@@ -1,6 +1,14 @@
 package com.example.lab1.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Team {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public long id;
 	
 	public String name;
@@ -12,8 +20,7 @@ public class Team {
 	public Team() {
 	}
 
-	public Team(long id, String name, String location) {
-		this.id = id;
+	public Team(String name, String location) {
 		this.name = name;
 		this.location = location;
 	}
